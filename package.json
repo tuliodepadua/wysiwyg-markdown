@@ -1,0 +1,33 @@
+{
+  "name": "wysiwyg-markdown",
+  "version": "1.0.0",
+  "description": "Editor de texto com entrega em html e markdown",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuliodepadua/wysiwyg-markdown.git"
+  },
+  "keywords": [
+    "markdown",
+    "wysiwyng",
+    "html5"
+  ],
+  "author": "@tuliodepadua",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tuliodepadua/wysiwyg-markdown/issues"
+  },
+  "homepage": "https://github.com/tuliodepadua/wysiwyg-markdown#readme",
+  "dependencies": {
+    "jquery": "3.2.1",
+    "materialize-css": "0.100.2",
+    "remarkable": "^1.7.1",
+    "turndown": "^5.0.0"
+  },
+  "devDependencies": {
+    "gulp-sass": "^4.0.1"
+  }
+}
