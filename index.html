@@ -43,7 +43,8 @@
         // rea
         var turndownService = new TurndownService();
         window.onload = function () {
-            iniWHM('wysihtml5-textarea', 'dist/stylesheet.css' );
+            let optionWHM = ['faLeft', 'faCenter', 'faRight', 'b', 'i', 'flb', 'fln', 'h1', 'h2'];
+            iniWHM('wysihtml5-textarea', 'dist/stylesheet.css', optionWHM);
         };
 
         $('#resgatar').click(function (e) { 
