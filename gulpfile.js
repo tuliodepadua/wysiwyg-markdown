@@ -1,7 +1,19 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var concat = require('gulp-concat');
 
+
+gulp.task('concat', function () {
+    return gulp.src(
+        [
+            'lib/js/wysihtml5-0.3.0.min.js',
+            'node_modules/remarkable/dist/remarkable.min.js',
+            'lib/js/turndown.js'
+        ])
+        .pipe(concat('libs.js'))
+        .pipe(gulp.dest('dist'));
+});
 
 
 gulp.task('sass', function () {

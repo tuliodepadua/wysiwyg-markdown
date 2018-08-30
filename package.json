@@ -28,6 +28,7 @@
     "turndown": "^5.0.0"
   },
   "devDependencies": {
+    "gulp-concat": "^2.6.1",
     "gulp-sass": "^4.0.1"
   }
 }
