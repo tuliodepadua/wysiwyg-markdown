@@ -19,6 +19,7 @@ var wysihtml5ParserRules = {
         li: {}
     }
 };
+
 var wmh = [];
 
 wmh.geti = (tipo) => {
@@ -32,7 +33,6 @@ wmh.geti = (tipo) => {
             break;
         case 'html':
             vlr = $('#' + wmh.dv).val().replace(/\n/g, "<br />");
-
             markdown = turndownService.turndown(vlr)
             vlr = markdown;
             wmh.backHTML(vlr);
@@ -46,27 +46,20 @@ wmh.geti = (tipo) => {
 function iniWHM(vlr, style, arr) {
     console.log(arr)
     let ar = wmh.menu(arr);
-
-    console.log(ar);
-
     if (style == undefined) {
         style = "";
     }
-
     let vlrinp = $('#' + vlr);
-
     vlrinp = vlrinp[0].parentElement.id;
-
     $('#' + vlrinp).append(ar);
-
     wmh.dv = vlr;
-
     editor = new wysihtml5.Editor(wmh.dv, {
         toolbar: "wmh",
         stylesheets: style,
         parserRules: wysihtml5ParserRules
     });
 }
+
 wmh.menu = (options) => {
     let arr = '<div id="wmh">';
     for (let i = 0; i < options.length; i++) {
@@ -110,41 +103,27 @@ wmh.menu = (options) => {
 
 
 wmh.backHTML = (vlr) => {
-
-    // vlr = vlr.replace(/\n/g, "<br />");
     var vlrTXT = '';
     var alinhamento = '';
-
     let md = new Remarkable();
     vlr = md.render(vlr);
-
-
     for (let i = 0; i < wmh.marcDown.length; i++) {
-        console.log(vlr.indexOf(wmh.marcDown[i]));
         if (vlr.indexOf(wmh.marcDown[i]) != -1) {
-
-
             switch (wmh.marcDown[i]) {
                 case '|-|-|':
                     alinhamento = 'center';
                     break;
                 case '||-|':
                     alinhamento = 'left';
-
                     break;
                 case '|-||':
                     alinhamento = 'right';
-
                     break;
-
                 default:
                     break;
             }
-
             let arr = vlr.split(wmh.marcDown[i]);
             let act = 0;
-
-
             for (let z = 0; z < arr.length; z++) {
                 if (act == 0) {
                     if (arr.length - 1 != z) {
@@ -167,9 +146,6 @@ wmh.backHTML = (vlr) => {
             vlrTXT = '';
         }
     }
-
-
-
     return vlr;
 }
 
