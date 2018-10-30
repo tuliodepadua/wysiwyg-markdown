@@ -7,7 +7,7 @@ var concat = require('gulp-concat');
 gulp.task('concat', function () {
     return gulp.src(
         [
-            'lib/js/wysihtml5-0.3.0.js',
+            'lib/js/wysihtml5-0.3.0.min.js',
             'node_modules/remarkable/dist/remarkable.min.js',
             'lib/js/turndown.js'
         ])
